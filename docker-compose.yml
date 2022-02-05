@@ -1,0 +1,15 @@
+version: "3.4"
+
+services:
+    app:
+        container_name: acmechallenge
+        image: acmechallenge
+        build:
+            context: .
+            dockerfile: Dockerfile
+            args:
+                ACMECHALLENGE_FILENAME: ADD_FILE_NAME
+                ACMECHALLENGE_DATA: REPLACE_BY_DATA
+        restart: always
+        ports:
+            - "80:80"
